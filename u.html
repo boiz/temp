@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+<script>
+
+var a=[1,2,3,4,5,5,5,7,7,1];
+
+let copy=array=>{
+	let newArray=[];
+	for(let x of array) newArray.push(x);
+	return newArray;
+}
+
+let unique=a=>{
+	a.forEach((v,i)=>{
+		let temp=copy(a);
+		delete temp[i];
+		//console.log(temp);
+		if(temp.includes(v)) a.splice(i,1);
+	});
+}
+
+</script>
+</body>
+</html>

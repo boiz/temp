@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Object-oriented JavaScript example</title>
+  </head>
+
+  <body>
+
+  </body>
+
+<script>
+function Person(first, last, age, gender, interests) {
+  this.name = {
+    'first': first,
+    'last' : last
+  };
+  this.age = age;
+  this.gender = gender;
+  this.interests = interests;
+
+  let pronoun;
+
+  if(/female/i.test(gender)) pronoun="She";
+  else if(/male/i.test(gender)) pronoun="He";
+
+
+  interests.forEach((v,i)=>{
+    interests[i]=` ${interests[i]}`;
+  });
+  interests[interests.length-1]= `and ${interests[interests.length-1]}.`;
+
+
+  this.bio = function() {
+    alert(`${first} ${last} is ${age} years old. ${pronoun} likes${interests}`);
+  };
+  this.greeting = function() {
+    alert('Hi! I\'m ' + this.name.first + '.');
+  };
+}
+
+
+var person2 = new Person('Chase', 'Smith', 32, 'feMale',['music', 'skiing', 'gaming', 'hiking']);
+
+
+</script>
+</html>
